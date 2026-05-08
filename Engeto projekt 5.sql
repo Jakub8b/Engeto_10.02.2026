@@ -36,7 +36,6 @@ ORDER BY
     -- fixed version
     
     create view project_5_JF as 
-    
     WITH gdp AS (
     SELECT 
         country,
@@ -69,7 +68,7 @@ FROM gdp g
 LEFT JOIN salary s ON g.year = s.year
 LEFT JOIN prices p ON g.year = p.year
 where gdp is not null
-and g.year >= 2000
+and g.year >= 1999
 ORDER BY g.year;
 
 select
