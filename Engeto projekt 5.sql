@@ -70,15 +70,16 @@ LEFT JOIN prices p ON g.year = p.year
 where gdp is not null
 and g.year >= 1999
 ORDER BY g.year;
-
+-- Výsledok
+create view final_projekt5_jf as 
 select
-year,
-round(gdp::numeric,0),
-round((gdp - lag(gdp) over (order by year))::numeric,0) as GDP_diff,
-avg_salary,
-avg_salary - lag(avg_salary) over (order by year) as salary_diff,
-avg_price,
-avg_price - lag(avg_price) over (order by year) as price_diff
+year as Rok,
+round(gdp::numeric,0) as HDP,
+round((gdp - lag(gdp) over (order by year))::numeric,0) as HDP_rozdiel,
+avg_salary as priemer_mzda,
+avg_salary - lag(avg_salary) over (order by year) as rozdiel_mzda,
+avg_price as priemer_cena_potravin,
+avg_price - lag(avg_price) over (order by year) as rozdiel_ceny_potravin
 from project_5_JF
 
     
