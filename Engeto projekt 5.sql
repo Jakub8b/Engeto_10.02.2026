@@ -70,8 +70,11 @@ LEFT JOIN prices p ON g.year = p.year
 where gdp is not null
 and g.year >= 1999
 ORDER BY g.year;
+
 -- Výsledok
+
 create view final_projekt5_jf as 
+
 select
 year as Rok,
 round(gdp::numeric,0) as HDP,
@@ -82,40 +85,6 @@ avg_price as priemer_cena_potravin,
 avg_price - lag(avg_price) over (order by year) as rozdiel_ceny_potravin
 from project_5_JF
 
-    
-    -- AI
-    WITH gdp AS (
-    SELECT 
-        country,
-        year,
-        gdp
-    FROM economies e 
-    WHERE country = 'Czech Republic'
-),
-prices AS (
-    SELECT
-        EXTRACT(YEAR FROM cp.date_from) AS year,
-        ROUND(AVG(cp.value)::numeric, 2) AS avg_price
-    FROM czechia_price cp
-    GROUP BY EXTRACT(YEAR FROM cp.date_from)
-),
-salary AS (
-    SELECT
-        cp.payroll_year AS year,
-        ROUND(AVG(cp.value)::numeric, 0) AS avg_salary
-    FROM czechia_payroll cp
-    WHERE cp.value_type_code = '5958'   -- průměrná hrubá mzda
-    GROUP BY cp.payroll_year
-)
-SELECT
-    g.year,
-    g.gdp,
-    s.avg_salary,
-    p.avg_price
-FROM gdp g
-LEFT JOIN salary s ON g.year = s.year
-LEFT JOIN prices p ON g.year = p.year
-where gdp is not null
-ORDER BY g.year;
+
 
 
