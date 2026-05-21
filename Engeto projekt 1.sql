@@ -1,7 +1,7 @@
 -- Projekt 1
 --Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 --Ročné porovnanie mezd
---Táto časť vyberá len relevantné riadky pre mzdy podľa kódov value_type_code = 5958 a calculation_code = 100
+--Táto časť vyberá len relevantné riadky pre mzdy podľa kódov value_type_code = 5958 (Průměrná hrubá mzda na zaměstnance) a calculation_code = 100 (fyzických osob)
 WITH payroll_clean AS (
     SELECT DISTINCT
         payroll_year,
