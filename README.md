@@ -181,7 +181,7 @@ Engeto_10.02.2026/
 
 | Projekt | Otázka | Zjištění |
 |---------|--------|----------|
-| **1** | Rostou mzdy všude? | 5 CTEs, LAG() | ✅ ANO (všechny rostou, 2 výjimky) |
+| **1** | Rostou mzdy všude? | ✅ ANO (všechny rostou, 2 výjimky) |
 | **2** | Kupní síla 2006→2018? |  ✅ ZVÝŠENA (+14,5 % mléko, +4,5 % chléb) |
 | **3** | Nejpomalejší inflace? |  ❄️ CUKR (-1,92 %), PAPRIKY (+7,29 %) |
 | **4** | Rok s 10%+ rozdílem? | ❌ NE (nikdy nepřekročilo 10 %) |
