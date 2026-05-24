@@ -156,10 +156,8 @@ Engeto_10.02.2026/
 ├── jakub_fecik_project_sql_primary_final.sql      # Primární datový dump
 ├── jakub_fecik_project_sql_primary_final.csv      # Primární dataset
 ├── Sekundární tabulka.sql         # Sekundární tabulka
-├── Sekundární tabulka.csv         # Sekundární dataset
-└── First attempt/                 # Alternativní implementace
+└── Sekundární tabulka.csv         # Sekundární dataset
 ```
-
 ---
 
 ## 🛠️ Technická implementace
@@ -207,7 +205,6 @@ Engeto_10.02.2026/
 - **Časové pokrytí:** Mzdy 2000-2021; Ceny 2006-2018; HDP 1999-2020
 - **Geografický rozsah:** Pouze Česká republika
 - **Komentáře:** SQL soubory obsahují komentáře v češtině/slovenštině vysvětlující logiku
-- **Alternativní řešení:** Dostupná v složce `First attempt/`
 
 ---
 
@@ -217,7 +214,3 @@ Engeto_10.02.2026/
 Projekt: Engeto SQL Course  
 Datum: 10. února 2026
 
----
-
-**Stav:** ✅ Dokončeno  
-**Všech 5 projektů:** Implementováno & Analyzováno
