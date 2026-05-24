@@ -155,7 +155,7 @@ Engeto_10.02.2026/
 ├── Engeto projekt 5.csv           # Výstup: trendy HDP/mzdy/ceny
 ├── jakub_fecik_project_sql_primary_final.sql      # Primární datový dump
 ├── jakub_fecik_project_sql_primary_final.csv      # Primární dataset
-├── Sekundární tabulka.sql         # Sekundární tabulka
+├── jakub_fecik_project_SQL_secondary_final.sql    # Sekundární tabulka
 └── Sekundární tabulka.csv         # Sekundární dataset
 ```
 ---
