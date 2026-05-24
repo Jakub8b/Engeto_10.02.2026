@@ -85,7 +85,7 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 
 ### **Projekt 4: Analýza rozdílu mezi růstem mezd a cen potravin**
 
-**Otázka:** *Existuje rok, kdy byl růst cen potravin o více než 10 % vyšší než růst mezd?*
+**Otázka:** *Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?*
 
 **Co dotaz dělá:**
 - Porovnává meziroční růst mezd a cen potravin
