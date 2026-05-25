@@ -85,7 +85,7 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 
 ### **Projekt 4: Analýza rozdílu mezi růstem mezd a cen potravin**
 
-**Otázka:** *Existuje rok, kdy byl růst cen potravin o více než 10 % vyšší než růst mezd?*
+**Otázka:** *Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?*
 
 **Co dotaz dělá:**
 - Porovnává meziroční růst mezd a cen potravin
@@ -155,7 +155,7 @@ Engeto_10.02.2026/
 ├── Engeto projekt 5.csv           # Výstup: trendy HDP/mzdy/ceny
 ├── jakub_fecik_project_sql_primary_final.sql      # Primární datový dump
 ├── jakub_fecik_project_sql_primary_final.csv      # Primární dataset
-├── Sekundární tabulka.sql         # Sekundární tabulka
+├── jakub_fecik_project_SQL_secondary_final.sql    # Sekundární tabulka
 └── Sekundární tabulka.csv         # Sekundární dataset
 ```
 ---
@@ -179,13 +179,13 @@ Engeto_10.02.2026/
 
 ## 📊 Shrnutí projektů
 
-| Projekt | Otázka | Odpověď | Zjištění |
-|---------|--------|---------|----------|
-| **1** | Rostou mzdy všude? | 5 CTEs, LAG() | ✅ ANO (všechny rostou, 2 výjimky) |
-| **2** | Kupní síla 2006→2018? | Poměr mzda/cena | ✅ ZVÝŠENA (+14,5 % mléko, +4,5 % chléb) |
-| **3** | Nejpomalejší inflace? | DENSE_RANK() | ❄️ CUKR (-1,92 %), PAPRIKY (+7,29 %) |
-| **4** | Rok s 10%+ rozdílem? | Procentuální gap | ❌ NE (nikdy nepřekročilo 10 %) |
-| **5** | HDP vliv na ceny/mzdy? | Korelace | 📉 SLABÝ (zpožděný/nepřímý efekt) |
+| Projekt | Otázka | Zjištění |
+|---------|--------|----------|
+| **1** | Rostou mzdy všude? | ✅ ANO (všechny rostou, s výjimkami) |
+| **2** | Kupní síla 2006→2018? |  ✅ ZVÝŠENA (+14,5 % mléko, +4,5 % chléb) |
+| **3** | Nejpomalejší inflace? |  ❄️ CUKR (-1,92 %), PAPRIKY (+7,29 %) |
+| **4** | Rok s 10%+ rozdílem? | ❌ NE (nikdy nepřekročilo 10 %) |
+| **5** | HDP vliv na ceny/mzdy? | 📉 SLABÝ (zpožděný/nepřímý efekt) |
 
 ---
 
