@@ -1,20 +1,10 @@
-# 📊 Engeto SQL Analytický Projekt
+# Engeto SQL Analytický Projekt
 
 Komplexní datově‑analytický projekt zkoumající ekonomické trendy v České republice prostřednictvím dat o mzdách, cenách potravin a HDP. Projekt obsahuje 5 analytických SQL dotazů, které zkoumají vztahy mezi růstem mezd, inflací potravin a makroekonomickými ukazateli.
 
-[![SQL](https://img.shields.io/badge/SQL-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white)](https://en.wikipedia.org/wiki/SQL)
-[![Data Analysis](https://img.shields.io/badge/Data%20Analysis-4CAF50?style=flat-square)](#)
-[![Czech Republic](https://img.shields.io/badge/Ekonomika-Česká%20republika-blue?style=flat-square)](#)
-
 ---
 
-## 📋 Přehled projektu
-
-Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů, které odpovídají na 5 klíčových ekonomických otázek týkajících se růstu mezd, kupní síly, inflace potravin a makroekonomických trendů.
-
----
-
-## 🔍 Rozpis projektů
+## Rozpis projektů
 
 ### **Projekt 1: Trendy růstu mezd v jednotlivých odvětvích**
 
@@ -30,8 +20,6 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 - Největší růst: IT/komunikace (21 591 → 62 433 Kč)
 - Pouze 2 výjimečné poklesy: nemovitosti (2013, 2020) a IT (2013)
 - Celkový trend: mzdy dlouhodobě rostou napříč všemi sektory
-
-**CSV:** `Engeto projekt 1.csv` (45 KB, 22+ odvětví × 22 let)
 
 ---
 
@@ -50,8 +38,6 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 - **Chléb 2006:** 1 261,93 kg
 - **Chléb 2018:** 1 319,32 kg **(+4,5 %)**
 - **Závěr:** Kupní síla vzrostla, protože mzdy rostly rychleji než ceny potravin
-
-**CSV:** `Engeto projekt 2.csv` (jednoduchá srovnávací tabulka)
 
 ---
 
@@ -79,8 +65,6 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 - **Nejméně stabilní:** papriky, máslo, vejce
 - **Rozptyl inflace:** od -1,92 % do +7,29 % – obrovský rozdíl!
 
-**CSV:** `Engeto projekt 3.csv` (27 potravin seřazeno podle inflace)
-
 ---
 
 ### **Projekt 4: Analýza rozdílu mezi růstem mezd a cen potravin**
@@ -104,8 +88,6 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 - Největší rozdíl: 2009 (mzdy rostly, ceny potravin klesly → rozdíl -9,66 %)
 - Mzdy a ceny potravin se dlouhodobě pohybují relativně synchronně
 - Kupní síla je stabilní a rostoucí
-
-**CSV:** `Engeto projekt 4.csv` (13 řádků, data 2006–2018)
 
 ---
 
@@ -134,49 +116,6 @@ Projekt analyzuje česká ekonomická data z let 2006–2018 pomocí SQL dotazů
 - Mzdy jsou stabilnější a méně volatilní
 - 2009 krize: HDP se zhroutil, ale mzdy pokračovaly v růstu (zpoždění)
 
-**CSV:** `Engeto projekt 5.csv` (24 let dat HDP, mezd, cen)
-
----
-
-## 📁 Struktura projektu
-
-```
-Engeto_10.02.2026/
-├── README.md (tento soubor)
-├── Engeto projekt 1.sql           # Analýza trendů mezd
-├── Engeto projekt 1.csv           # Výstup: trendy mezd podle odvětví
-├── Engeto projekt 2.sql           # Srovnání kupní síly
-├── Engeto projekt 2.csv           # Výstup: cena mléka a chleba
-├── Engeto projekt 3.sql           # Žebříček inflace potravin
-├── Engeto projekt 3.csv           # Výstup: 27 potravin seřazeno
-├── Engeto projekt 4.sql           # Detekce rozdílů mzdy-ceny
-├── Engeto projekt 4.csv           # Výstup: meziroční analýza
-├── Engeto projekt 5.sql           # Korelace HDP
-├── Engeto projekt 5.csv           # Výstup: trendy HDP/mzdy/ceny
-├── jakub_fecik_project_sql_primary_final.sql      # Primární datový dump
-├── jakub_fecik_project_sql_primary_final.csv      # Primární dataset
-├── jakub_fecik_project_SQL_secondary_final.sql    # Sekundární tabulka
-└── Sekundární tabulka.csv         # Sekundární dataset
-```
----
-
-## 🛠️ Technická implementace
-
-### Používané SQL techniky:
-- **Window Functions:** `LAG()`, `DENSE_RANK()`, `PARTITION BY`
-- **CTEs (Common Table Expressions):** Víceúrovňová transformace dat
-- **Agregace:** `AVG()`, `GROUP BY` pro roční/kategoriální analýzy
-- **Datumové funkce:** Extrakce roku, porovnání dat
-- **Logika meziročního srovnání:** `LAG()` pro předchozí období
-
-### Zdroje dat:
-- `jakub_fecik_project_SQL_primary_final` - Hlavní sloučený dataset
-  - Obsahuje: mzdy v odvětvích, ceny potravin, roční agregáty
-  - Období: 2000-2021 pro mzdy, 2006-2018 pro ceny potravin
-  - 1M+ záznamů s normalizovanou strukturou
-
----
-
 ## 📊 Shrnutí projektů
 
 | Projekt | Otázka | Zjištění |
@@ -197,20 +136,4 @@ Engeto_10.02.2026/
 4. **Rovnováha mzdy-cena:** Růst mezd překonává inflaci potravin → dobré pro kupní sílu
 5. **HDP efekt je slabý:** Změny HDP se okamžitě neprojeví na mzdách/cenách (zpoždění)
 
----
-
-## 📝 Poznámky
-
-- **Kvalita dat:** Založeno na oficiálních ekonomických statistikách ČR
-- **Časové pokrytí:** Mzdy 2000-2021; Ceny 2006-2018; HDP 1999-2020
-- **Geografický rozsah:** Pouze Česká republika
-- **Komentáře:** SQL soubory obsahují komentáře v češtině/slovenštině vysvětlující logiku
-
----
-
-## 👨‍💻 Autor
-
-**Jakub8b**  
-Projekt: Engeto SQL Course  
-Datum: 10. února 2026
 
