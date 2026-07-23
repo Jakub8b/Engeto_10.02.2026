@@ -122,41 +122,26 @@ FROM lag_data
 ),percent_growth as (
 -- Tento CTE počíta priemerné percentuálne zdražovanie pre každú potravinu naprieč všetkými rokmi. 
 -- Výsledok predstavuje dlhodobý trend rastu cien jednotlivých položiek.
-select*,
-round(avg(pcnt_diff) over (partition by product_name)::numeric,2) as avg_pcnt
-from percent_data)
-,Dense_rank as (
+SELECT *,
+ROUND(AVG(pcnt_diff) OVER (PARTITION BY product_name)::NUMERIC,2) AS avg_pcnt
+FROM percent_data)
+,DENSE_RANK AS (
 -- Tento CTE priraďuje potravinám poradie podľa rýchlosti ich zdražovania. 
 -- Nižšie poradie znamená pomalšie zdražovanie a teda stabilnejšiu cenu.
-select*,
-dense_rank()over (order by avg_pcnt) as flag_rank
-from percent_growth)
-,final as (
+SELECT *,
+DENSE_RANK() OVER (ORDER BY avg_pcnt) AS flag_rank
+FROM percent_growth)
+,final AS (
 -- Finálny výber zobrazuje iba unikátne potraviny s ich priemerným percentuálnym zdražovaním a poradím. 
 -- Slúži ako prehľadná sumarizácia výsledkov pre ďalšiu analýzu alebo vizualizáciu.
-select
-product_name as potraviny,
-avg_pcnt as priemerne_percent_zdražovanie,
-flag_rank as najpomalšie_zdražovanie
-from Dense_rank 
-where product_name is not null)
-select distinct*
-from final
-order by najpomalšie_zdražovanie;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+SELECT
+product_name AS potraviny,
+avg_pcnt AS priemerne_percent_zdražovanie,
+flag_rank AS najpomalšie_zdražovanie
+FROM DENSE_RANK 
+WHERE product_name IS NOT NULL)
+SELECT DISTINCT *
+FROM final
+ORDER BY najpomalšie_zdražovanie;
+   
     

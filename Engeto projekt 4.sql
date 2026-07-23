@@ -46,5 +46,5 @@ SELECT
         ELSE 0
     END AS Flag_diff_10
 FROM pcnt
-where year is not null
+WHERE year is NOT NULL
 ORDER BY year;

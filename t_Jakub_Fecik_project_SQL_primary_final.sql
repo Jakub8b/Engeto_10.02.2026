@@ -54,7 +54,7 @@ FROM (
 ) x
 WHERE rn = 1;
 -- Join tabuliek payroll a price, ktoré boli zagregované podľa rokov.
-create TABLE jakub_fecik_project_SQL_primary_final AS
+CREATE TABLE jakub_fecik_project_SQL_primary_final AS
 SELECT
     py.value,
     py.value_type_code,
@@ -71,4 +71,5 @@ SELECT
 FROM payroll_yearly py
 LEFT JOIN price_yearly_dedup pd
     ON py.payroll_year = pd.price_year
+    WHERE payroll_year >= '2006'
 ORDER BY py.payroll_year, py.industry_name;
